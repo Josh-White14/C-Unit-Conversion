@@ -44,12 +44,13 @@ bool is_valid_input(char *s){
 
 int choice_input() {
 
-    char num[2];
-    if(fgets(num, sizeof(num), stdin) == NULL){
+    char choice_selection[2];
+    if(fgets(choice_selection, sizeof(choice_selection), stdin) == NULL){
         return 0;
     }
-    num[strcspn(num, "\n")] = 0;
-    return atoi(num);    
+    choice_selection[strcspn(choice_selection, "\n")] = 0;
+    int choice_selection_integer = (int)strtod(choice_selection, NULL);    
+    return choice_selection_integer;
 }
 
 char* value_input(){
@@ -85,13 +86,23 @@ void clear_screen(){
     
 }
 
-void default_screen(){
+void conversion_screen_incorrect_menu_choice(int choice){
 
-    system("cls");
+    clear_screen();
     clear_buffer();
-    puts("Invalid choice, try again.\n\n");
-    puts("Press Enter to return to menu...");
-    getchar();
+    puts("Invalid choice.\n");
+    printf("%d is not a valid menu selection.\n", choice);
+    puts("\nPress Enter to return to menu...");
+}
+
+void home_screen_incorrect_menu_choice(int choice){
+
+    clear_screen();
+    clear_buffer();
+    puts("Invalid choice.\n");
+    printf("%d is not a valid menu selection.\n", choice);
+    puts("\nPress Enter to return to menu...");
+    clear_buffer();
 }
 
 void conversion_function(const char *prompt, const char *title, const char *input_unit, const char *output_unit, double(*conversion_func)(double)){
@@ -99,30 +110,34 @@ void conversion_function(const char *prompt, const char *title, const char *inpu
     char* user_input_value = NULL;
     
 
-   
+   while(1){
+
+        clear_screen();
+        clear_buffer();
+        puts(title);
+        puts("-------------------------");
+        puts(prompt);
+        user_input_value = value_input();
         
-    clear_screen();
-    clear_buffer();
-    puts(title);
-    puts("-------------------------");
-    puts(prompt);
-    user_input_value = value_input();
-    
-    
-    if(is_valid_input(user_input_value)){
-
-        double_input_value = atof(user_input_value);
-        printf("\n%.2lf %s is equivalent to %.2lf %s \n", double_input_value, input_unit, conversion_func(double_input_value), output_unit);
         
+        if(is_valid_input(user_input_value)){
 
-    }
+            double_input_value = strtod(user_input_value, NULL);
+            printf("\n%.2lf %s is equivalent to %.2lf %s \r\n", double_input_value, input_unit, conversion_func(double_input_value), output_unit);
+            free(user_input_value);
+            puts("\nPress Enter to return to Menu");
+            break;
+            
 
-    else{
-        printf("\nInvalid input: '%s' \n\n", user_input_value);
-    }
+        }
 
-    free(user_input_value);  
-    printf("\nPress Enter to return to Menu\n");
+        else{
+            printf("\nInvalid input: '%s", user_input_value);
+            puts("\n\nIputs must be integer or float values.\nPress Enter to try again\n");
+            free(user_input_value);
+        }
+   }
+
 }
 
 

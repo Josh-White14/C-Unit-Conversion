@@ -10,21 +10,18 @@
 
 int main() {
    
-   
-    
-
     bool isRunning = true; 
     while(isRunning == true){
 
-        
         clear_screen();
+        
         puts("CONVERSION COMMAND LINE TOOL"
             "\n---------------------------"
             "\n[1] Length Conversion Menu"
             "\n[2] Temperature Conversion Menu"
-             "\n[3] Exit"
+             "\n[3] Quit"
         );
- 
+
         int choice = choice_input(); 
 
         switch(choice){
@@ -37,7 +34,7 @@ int main() {
             }
 
             case 2: {
-                
+
                 temperature_conversion_menu();
                 break;
 
@@ -51,7 +48,7 @@ int main() {
             }
 
             default : {
-                default_screen();
+                home_screen_incorrect_menu_choice(choice);
                 break;
             }
 

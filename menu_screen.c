@@ -12,7 +12,7 @@ int length_conversion_menu(){
             "\n----------------------"
             "\n[1] Meters to Feet"
              "\n[2] Feet to Meters"
-             "\n[3] Exit"
+             "\n[3] Main Menu"
         );
  
         int choice = choice_input(); 
@@ -38,7 +38,7 @@ int length_conversion_menu(){
             }
 
             default : {
-                default_screen();
+                conversion_screen_incorrect_menu_choice(choice);
                 break;
             }
 
@@ -57,13 +57,13 @@ int temperature_conversion_menu(){
 
         clear_buffer();
         clear_screen();
-        puts("LENGTH CONVERSION MENU"
+        puts("TEMPERATURE CONVERSION MENU"
             "\n----------------------"
             "\n[1] Ceclius to Fahrenheit"
              "\n[2] Fahrenheit to Celcius"
              "\n[3] Ceclius to Kelvin"
              "\n[4] Kelvin to Celcius"
-             "\n[5] Exit"
+             "\n[5] Main Menu"
         );
  
         int choice = choice_input(); 
@@ -104,7 +104,7 @@ int temperature_conversion_menu(){
             }
 
             default : {
-                default_screen();
+                conversion_screen_incorrect_menu_choice(choice);
                 break;
             }
 

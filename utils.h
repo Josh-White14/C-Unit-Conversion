@@ -14,7 +14,8 @@ void clear_buffer();
 int choice_input();
 char* value_input();
 void clear_screen();
-void default_screen();
+void home_screen_incorrect_menu_choice(int choice);
+void conversion_screen_incorrect_menu_choice(int choice);
 void conversion_function(const char *prompt, const char *title, const char *input_unit, const char *output_unit, double(*conversion_func)(double));
 
 #endif 

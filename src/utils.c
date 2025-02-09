@@ -132,8 +132,8 @@ void conversion_function(const char *prompt, const char *title, const char *inpu
         }
 
         else{
-            printf("\nInvalid input: '%s", user_input_value);
-            puts("\n\nIputs must be integer or float values.\nPress Enter to try again\n");
+            printf("Invalid input: '%s", user_input_value);
+            puts("\n\nIputs must be integer or float values.\nPress Enter to try again");
             free(user_input_value);
         }
    }

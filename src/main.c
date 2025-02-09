@@ -10,8 +10,8 @@
 
 int main() {
    
-    bool isRunning = true; 
-    while(isRunning == true){
+    bool is_running = true; 
+    while(is_running == true){
 
         clear_screen();
         
@@ -19,7 +19,9 @@ int main() {
             "\n---------------------------"
             "\n[1] Length Conversion Menu"
             "\n[2] Temperature Conversion Menu"
-             "\n[3] Quit"
+            "\n[3] Mass Conversion Menu"
+            "\n[4] Volume Conversion Menu"
+            "\n[5] Exit"
         );
 
         int choice = choice_input(); 
@@ -42,9 +44,21 @@ int main() {
 
             case 3: {
 
-                isRunning = false;
+                mass_conversion_menu();
                 break;
 
+            }
+
+            case 4: {
+
+                volume_conversion_menu();
+                break;
+
+            }
+
+            case 5: {
+                is_running = false;
+                break;
             }
 
             default : {

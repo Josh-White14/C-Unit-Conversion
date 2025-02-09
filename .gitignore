@@ -3,3 +3,6 @@
 *.out
 *.o
 /validate.c
+/tests/*
+.vs/
+Unity/

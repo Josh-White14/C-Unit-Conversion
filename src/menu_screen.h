@@ -13,6 +13,8 @@
 
 int length_conversion_menu();
 int  temperature_conversion_menu(); 
+int mass_conversion_menu();
+int volume_conversion_menu();
 
 
 #endif 

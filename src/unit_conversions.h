@@ -29,7 +29,8 @@ static const double GALLONS_TO_LITRES_CONVERSION_FACTOR = 3.78541;
 static const double LITRES_TO_PINTS_CONVERSION_FACTOR = 2.11338;
 static const double PINTS_TO_LITRES_CONVERSION_FACTOR = 0.473176;
 
-
+static const double KPH_TO_MPH_CONVERSION_FACTOR = 0.621371;
+static const double MPH_TO_KPH_CONVERSION_FACTOR = 1.60934;
 
 double meters_to_feet(double meter_measurement);
 double feet_to_meters(double feet_measurement);
@@ -54,6 +55,12 @@ double gallons_to_litres(double gallons);
 double litres_to_pints(double litres);
 double pints_to_litres(double pints);
 
+double kph_to_mph(double kph);
+double mph_to_kph(double mph);
+
+double speed_calculation(double distance, double time);
+double mass_calculation(double mass, double acceleration);
+double acceleration_calculation(double velocity, double time);
 
 
 #endif

@@ -1,8 +1,0 @@
-.vscode/
-*.exe
-*.out
-*.o
-/validate.c
-/tests/*
-.vs/
-Unity/

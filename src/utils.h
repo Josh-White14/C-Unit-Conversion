@@ -19,4 +19,7 @@ void conversion_screen_incorrect_menu_choice(int choice);
 void conversion_function(const char *prompt, const char *title, const char *input_unit
     , const char *output_unit, double(*conversion_func)(double), bool negative_allowed);
 
+void unit_calculation_function(const char *prompt_one, const char *prompt_two, const char *title, const char *unit_one, const char *unit_two
+    , const char *output_unit, double(*unit_calculation_func)(double, double), bool negative_allowed);
+
 #endif 

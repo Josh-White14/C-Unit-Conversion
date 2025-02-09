@@ -268,3 +268,106 @@ int volume_conversion_menu(){
     clear_buffer();
     return 0; 
 }
+
+int speed_conversion_menu(){
+
+    
+    bool is_speed_menu_running = true; 
+    while(is_speed_menu_running){
+
+        clear_buffer();
+        clear_screen();
+        puts("SPEED CONVERSION MENU"
+            "\n----------------------"
+            "\n[1] Kilometers per Hour to Miles per Hour"
+             "\n[2] Miles per Hour to Kilometers per Hour"
+             "\n[3] Main Menu"
+        );
+ 
+        int choice = choice_input(); 
+
+        switch(choice){
+            
+            case 1: {
+                conversion_function("Enter a value in Kilometers per Hour", "KPH TO MPH CONVERSION", "KPH", "MPH", kph_to_mph, true);
+                break;
+
+            }
+
+            case 2: {
+
+                conversion_function("Enter a value in Miles per Hour","MPH TO KPH CONVERSION", "MPH", "KPH", mph_to_kph, true);
+                break;
+
+            }
+
+            case 3: {
+                is_speed_menu_running = false;
+                break;
+            }
+
+            default : {
+                conversion_screen_incorrect_menu_choice(choice);
+                break;
+            }
+
+        }
+    }
+    clear_buffer();
+    return 0;
+}
+
+int unit_calculation_menu(){
+
+    
+    bool is_unit_calc_menu_running = true; 
+    while(is_unit_calc_menu_running){
+
+        clear_buffer();
+        clear_screen();
+        puts("UNIT CALCULATION MENU"
+            "\n----------------------"
+            "\n[1] Speed Calculation"
+            "\n[2] Mass Calculation"
+            "\n[3] Acceleration Calculation"
+             "\n[4] Main Menu"
+        );
+ 
+        int choice = choice_input(); 
+
+        switch(choice){
+            
+            case 1: {
+                unit_calculation_function("Enter a distance in KM", "Enter a value in Hours","SPEED CALCULATION" , "km" , "hours", "KPH", speed_calculation, true);
+                break;
+
+            }
+
+            case 2: {
+
+                unit_calculation_function("Enter a mass in KG", "Enter a value in M/S^2","MASS CALCULATION" , "kg" , "m/s^2", "N", mass_calculation, true);
+            }
+
+            case 3: {
+
+                unit_calculation_function("Enter a velocity in M/S", "Enter a value in Seconds","ACCELERATION CALCULATION" , "m/s" , "s", "m/s^2", acceleration_calculation, true);
+                break;
+
+            }
+
+            case 4: {
+                is_unit_calc_menu_running = false;
+                break;
+            }
+
+            default : {
+                conversion_screen_incorrect_menu_choice(choice);
+                break;
+            }
+
+        }
+    }
+    clear_buffer();
+    return 0;
+}
+

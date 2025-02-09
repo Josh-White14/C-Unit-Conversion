@@ -9,13 +9,14 @@
 
 
 
-bool is_valid_input(char *s);
+bool is_valid_input(char *s, bool negative_allowed);
 void clear_buffer();
 int choice_input();
 char* value_input();
 void clear_screen();
 void home_screen_incorrect_menu_choice(int choice);
 void conversion_screen_incorrect_menu_choice(int choice);
-void conversion_function(const char *prompt, const char *title, const char *input_unit, const char *output_unit, double(*conversion_func)(double));
+void conversion_function(const char *prompt, const char *title, const char *input_unit
+    , const char *output_unit, double(*conversion_func)(double), bool negative_allowed);
 
 #endif 

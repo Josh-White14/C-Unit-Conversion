@@ -13,13 +13,14 @@ void tearDown(void) {
 }
 
 void test_is_valid_input(void) {
-    TEST_ASSERT_TRUE(is_valid_input("123"));
-    TEST_ASSERT_TRUE(is_valid_input("12.3"));
-    TEST_ASSERT_TRUE(is_valid_input("-12.3"));
-    TEST_ASSERT_FALSE(is_valid_input("abc"));
-    TEST_ASSERT_FALSE(is_valid_input("12.3.4"));
-    TEST_ASSERT_FALSE(is_valid_input(NULL));
-    TEST_ASSERT_FALSE(is_valid_input(""));
+    TEST_ASSERT_TRUE(is_valid_input("123", true));
+    TEST_ASSERT_TRUE(is_valid_input("12.3", true));
+    TEST_ASSERT_TRUE(is_valid_input("-12.3", true));
+    TEST_ASSERT_FALSE(is_valid_input("-12.3", false));
+    TEST_ASSERT_FALSE(is_valid_input("abc", true));
+    TEST_ASSERT_FALSE(is_valid_input("12.3.4", true));
+    TEST_ASSERT_FALSE(is_valid_input(NULL, true));
+    TEST_ASSERT_FALSE(is_valid_input("", true));
 }
 
 void test_length_conversion(void) {

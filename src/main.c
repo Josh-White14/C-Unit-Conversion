@@ -21,7 +21,9 @@ int main() {
             "\n[2] Temperature Conversion Menu"
             "\n[3] Mass Conversion Menu"
             "\n[4] Volume Conversion Menu"
-            "\n[5] Exit"
+            "\n[5] Speed Conversion Menu"
+            "\n[6] Unit Calculation Menu"
+            "\n[7] Exit"
         );
 
         int choice = choice_input(); 
@@ -57,6 +59,20 @@ int main() {
             }
 
             case 5: {
+
+                speed_conversion_menu();
+                break;
+
+            }
+
+            case 6: {
+
+                unit_calculation_menu();
+                break;
+
+            }
+
+            case 7: {
                 is_running = false;
                 break;
             }

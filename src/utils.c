@@ -100,9 +100,18 @@ void conversion_screen_incorrect_menu_choice(int choice){
 
     clear_screen();
     clear_buffer();
-    puts("Invalid choice.\n");
-    printf("%d is not a valid menu selection.\n", choice);
+    
+    
+    if(choice == 0){
+        puts("Invalid input. Please enter a valid number.");
+    }
+    
+    else{
+        printf("%d is not a valid menu selection.\n", choice);
+
+    
     puts("\nPress Enter to return to menu...");
+    }   
 }
 
 void home_screen_incorrect_menu_choice(int choice){
@@ -136,7 +145,6 @@ void conversion_function(const char *prompt, const char *title, const char *inpu
 
             double_input_value = strtod(user_input_value, NULL);
             printf("\n%.2lf %s is equivalent to %.2lf %s \r\n", double_input_value, input_unit, conversion_func(double_input_value), output_unit);
-            free(user_input_value);
             puts("\nPress Enter to return to Menu");
             break;
             
@@ -144,13 +152,55 @@ void conversion_function(const char *prompt, const char *title, const char *inpu
         }
 
         else{
-            printf("Invalid input: '%s", user_input_value);
-            puts("\n\nIputs must be integer or float values.\nPress Enter to try again");
-            free(user_input_value);
+            printf("Invalid input: %s", user_input_value);
+            puts("\n\nInputs must be integer or float values."
+                "\nNOTE: Some unit conversions do not handle negative values"
+                "\nPress Enter to try again");
             clear_buffer();
         }
    }
+   free(user_input_value);
 
 }
 
+void unit_calculation_function(const char *prompt_one, const char *prompt_two, const char *title, const char *unit_one, const char *unit_two
+    , const char *output_unit, double(*unit_calculation_func)(double, double), bool negative_allowed){
+
+    char* distance = NULL;
+    char* time = NULL;
+
+    clear_buffer();
+
+    while(1){
+        clear_screen();
+        puts(title);
+        puts("-------------------------");
+        puts(prompt_one);
+        distance = value_input();
+
+        puts(prompt_two);
+        time = value_input();
+
+        if(is_valid_input(distance, negative_allowed) && is_valid_input(time, negative_allowed)){
+
+            double first_input = strtod(distance, NULL);
+            double second_input = strtod(time, NULL);
+
+            printf("\nInputs: %.2lf %s , %.2lf %s Result: %.2lf %s \r\n", first_input, unit_one, second_input, unit_two, unit_calculation_func(first_input, second_input), output_unit); 
+            puts("\nPress Enter to return to Menu");
+            break;
+        }
+
+        else{
+            printf("Invalid input(s): %s %s", distance, time);
+            puts("\n\nInputs must be integer or float values."
+                "\nNOTE: Some unit conversions do not handle negative values"
+                "\nPress Enter to try again");
+            clear_buffer();
+        }
+    }
+    free(distance);
+    free(time);
+    
+}
 

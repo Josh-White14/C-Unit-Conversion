@@ -73,5 +73,26 @@ double pints_to_litres(double pints){
     return pints * PINTS_TO_LITRES_CONVERSION_FACTOR;
 }
 
+double kph_to_mph(double kph){
+    return kph * KPH_TO_MPH_CONVERSION_FACTOR;
+}
+
+double mph_to_kph(double mph){
+    return mph * MPH_TO_KPH_CONVERSION_FACTOR;
+}
+
+double speed_calculation(double distance, double time){
+    return distance / time;
+}
+
+double mass_calculation(double force, double acceleration){
+    return force / acceleration;
+}
+
+double acceleration_calculation(double velocity, double time){
+    return velocity / time;
+}
+
+
 
 

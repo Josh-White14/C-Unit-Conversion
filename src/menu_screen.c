@@ -25,35 +25,35 @@ int length_conversion_menu(){
         switch(choice){
             
             case 1: {
-                conversion_function("Enter a value in Meters", "METERS TO FEET CONVERSION", "meters", "feet", meters_to_feet);
+                conversion_function("Enter a value in Meters", "METERS TO FEET CONVERSION", "meters", "feet", meters_to_feet, true);
                 break;
 
             }
 
             case 2: {
 
-                conversion_function("Enter a value in Feet","FEET TO METERS CONVERSION", "feet", "meters", feet_to_meters);
+                conversion_function("Enter a value in Feet","FEET TO METERS CONVERSION", "feet", "meters", feet_to_meters, true);
                 break;
 
             }
 
             case 3: {
-                conversion_function("Enter a value in Kilometers", "KILOMETERS TO MILES CONVERSION", "km", "miles", kilometers_to_miles);
+                conversion_function("Enter a value in Kilometers", "KILOMETERS TO MILES CONVERSION", "km", "miles", kilometers_to_miles, true);
                 break;
             }
 
             case 4: {
-                conversion_function("Enter a value in Miles","MILES TO KILOMETERS CONVERSION"," miles", "km", miles_to_kilometers);
+                conversion_function("Enter a value in Miles","MILES TO KILOMETERS CONVERSION"," miles", "km", miles_to_kilometers, true);
                 break;
             }
 
             case 5: {
-                conversion_function("Enter a value in Meters","METERS TO YARDS CONVERSION", "m", "yds", meters_to_yards);
+                conversion_function("Enter a value in Meters","METERS TO YARDS CONVERSION", "m", "yds", meters_to_yards, true);
                 break;
             }
 
             case 6: {
-                conversion_function("Enter a value in Yards","YARDS TO METERS CONVERSION", "yds", "m", yards_to_meters);
+                conversion_function("Enter a value in Yards","YARDS TO METERS CONVERSION", "yds", "m", yards_to_meters, true);
                 break;
             }
 
@@ -96,14 +96,14 @@ int temperature_conversion_menu(){
         switch(choice){
             
             case 1: {
-                conversion_function("Enter a value in Celcius", "CELCIUS TO FAHRENHEIT CONVERSION", "C", "F", celcius_to_fahrenheit);
+                conversion_function("Enter a value in Celcius", "CELCIUS TO FAHRENHEIT CONVERSION", "C", "F", celcius_to_fahrenheit, true);
                 break;
 
             }
 
             case 2: {
 
-                conversion_function("Enter a value in Fahrenheit","FAHRENHEIT TO CELCIUS CONVERSION", "F", "C", fahrenheit_to_celcius);
+                conversion_function("Enter a value in Fahrenheit","FAHRENHEIT TO CELCIUS CONVERSION", "F", "C", fahrenheit_to_celcius, true);
                 break;
 
             }
@@ -111,14 +111,14 @@ int temperature_conversion_menu(){
 
             case 3: {
 
-                conversion_function("Enter a value in Celcius","CELCIUS TO KELVIN CONVERSION", "C", "K", celcius_to_kelvin);
+                conversion_function("Enter a value in Celcius","CELCIUS TO KELVIN CONVERSION", "C", "K", celcius_to_kelvin, true);
                 break;
 
             }
 
             case 4: {
 
-                conversion_function("Enter a value in Kelvin","KELVIN TO CELCIUS CONVERSION", "F", "C", kelvin_to_celcius);
+                conversion_function("Enter a value in Kelvin","KELVIN TO CELCIUS CONVERSION", "F", "C", kelvin_to_celcius, true);
                 break;
 
             }
@@ -162,14 +162,14 @@ int mass_conversion_menu(){
         switch(choice){
             
             case 1: {
-                conversion_function("Enter a value in Kilograms", "KILOGRAMS TO POUNDS CONVERSION", "kg", "lbs", kilograms_to_pounds);
+                conversion_function("Enter a value in Kilograms", "KILOGRAMS TO POUNDS CONVERSION", "kg", "lbs", kilograms_to_pounds, false);
                 break;
 
             }
 
             case 2: {
 
-                conversion_function("Enter a value in Pounds","POUNDS TO KILOGRAMS CONVERSION", "lbs", "kg", pounds_to_kilograms);
+                conversion_function("Enter a value in Pounds","POUNDS TO KILOGRAMS CONVERSION", "lbs", "kg", pounds_to_kilograms, false);
                 break;
 
             }
@@ -177,14 +177,14 @@ int mass_conversion_menu(){
 
             case 3: {
 
-                conversion_function("Enter a value in Grams","GRAMS TO OUNCES CONVERSION", "g", "oz", grams_to_ounces);
+                conversion_function("Enter a value in Grams","GRAMS TO OUNCES CONVERSION", "g", "oz", grams_to_ounces, false);
                 break;
 
             }
 
             case 4: {
 
-                conversion_function("Enter a value in Ounces","OUNCES TO GRAMS CONVERSION", "oz", "g", ounces_to_grams);
+                conversion_function("Enter a value in Ounces","OUNCES TO GRAMS CONVERSION", "oz", "g", ounces_to_grams, false);
                 break;
 
             }
@@ -227,28 +227,28 @@ int volume_conversion_menu(){
         switch(choice){
             
             case 1: {
-                conversion_function("Enter a value in Litres", "LITRES TO GALLONS CONVERSION", "Litres", "Gallons", litres_to_gallons);
+                conversion_function("Enter a value in Litres", "LITRES TO GALLONS CONVERSION", "Litres", "Gallons", litres_to_gallons, false);
                 break;
 
             }
 
             case 2: {
 
-                conversion_function("Enter a value in Gallons","GALLONS TO LITRES CONVERSION", "Gallons", "Litres", gallons_to_litres);
+                conversion_function("Enter a value in Gallons","GALLONS TO LITRES CONVERSION", "Gallons", "Litres", gallons_to_litres, false);
                 break;
 
             }
 
             case 3: {
 
-                conversion_function("Enter a value in Litres","LITRES TO PINTS CONVERSION", "Litres", "Pints", litres_to_pints);
+                conversion_function("Enter a value in Litres","LITRES TO PINTS CONVERSION", "Litres", "Pints", litres_to_pints, false);
                 break;
 
             }
 
             case 4: {
 
-                conversion_function("Enter a value in Pints","PINTS TO LITRES CONVERSION", "Pints", "Litres", pints_to_litres);
+                conversion_function("Enter a value in Pints","PINTS TO LITRES CONVERSION", "Pints", "Litres", pints_to_litres, false);
                 break;
 
             }

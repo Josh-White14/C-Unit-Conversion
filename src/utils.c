@@ -1,6 +1,12 @@
 #include "utils.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
 
-bool is_valid_input(char *s){
+
+bool is_valid_input(char *s, bool negative_allowed){
 
     if(s == NULL || *s == '\0'){
         return false;
@@ -11,8 +17,12 @@ bool is_valid_input(char *s){
 
     int i = 0;
     
-    if(s[0] == '-'){
+    if(s[0] == '-' && negative_allowed){
         i++;
+    }
+
+    else if (s[0] == '-' && !negative_allowed){
+        return false; 
     }
 
     while(s[i] != '\0'){
@@ -105,22 +115,24 @@ void home_screen_incorrect_menu_choice(int choice){
     clear_buffer();
 }
 
-void conversion_function(const char *prompt, const char *title, const char *input_unit, const char *output_unit, double(*conversion_func)(double)){
+void conversion_function(const char *prompt, const char *title, const char *input_unit
+    , const char *output_unit, double(*conversion_func)(double), bool negative_allowed){
+
     double double_input_value;
     char* user_input_value = NULL;
     
+   clear_buffer();    
 
    while(1){
 
         clear_screen();
-        clear_buffer();
         puts(title);
         puts("-------------------------");
         puts(prompt);
         user_input_value = value_input();
         
         
-        if(is_valid_input(user_input_value)){
+        if(is_valid_input(user_input_value, negative_allowed)){
 
             double_input_value = strtod(user_input_value, NULL);
             printf("\n%.2lf %s is equivalent to %.2lf %s \r\n", double_input_value, input_unit, conversion_func(double_input_value), output_unit);
@@ -135,6 +147,7 @@ void conversion_function(const char *prompt, const char *title, const char *inpu
             printf("Invalid input: '%s", user_input_value);
             puts("\n\nIputs must be integer or float values.\nPress Enter to try again");
             free(user_input_value);
+            clear_buffer();
         }
    }
 

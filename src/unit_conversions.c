@@ -38,27 +38,27 @@ yards_to_meters (double yards)
 }
 
 double
-celcius_to_fahrenheit (double celcius)
+celsius_to_fahrenheit (double celsius)
 {
-  return ((celcius * 1.8) + 32);
+  return ((celsius * 1.8) + 32);
 }
 
 double
-fahrenheit_to_celcius (double fahrenheit)
+fahrenheit_to_celsius (double fahrenheit)
 {
   return ((fahrenheit - 32) / 1.8);
 }
 
 double
-celcius_to_kelvin (double celcius)
+celsius_to_kelvin (double celsius)
 {
-  return (celcius + CELCIUS_TO_KELVIN_CONVERSION_FACTOR);
+  return (celsius + CELSIUS_TO_KELVIN_CONVERSION_FACTOR);
 }
 
 double
-kelvin_to_celcius (double kelvin)
+kelvin_to_celsius (double kelvin)
 {
-  return (kelvin - CELCIUS_TO_KELVIN_CONVERSION_FACTOR);
+  return (kelvin - CELSIUS_TO_KELVIN_CONVERSION_FACTOR);
 }
 
 double

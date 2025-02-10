@@ -109,9 +109,9 @@ temperature_conversion_menu ()
       puts ("TEMPERATURE CONVERSION MENU"
 	    "\n----------------------"
 	    "\n[1] Ceclius to Fahrenheit"
-	    "\n[2] Fahrenheit to Celcius"
+	    "\n[2] Fahrenheit to Celsius"
 	    "\n[3] Ceclius to Kelvin"
-	    "\n[4] Kelvin to Celcius" "\n[5] Main Menu");
+	    "\n[4] Kelvin to Celsius" "\n[5] Main Menu");
 
       int choice = choice_input ();
 
@@ -120,9 +120,9 @@ temperature_conversion_menu ()
 
 	case 1:
 	  {
-	    conversion_function ("Enter a value in Celcius",
-				 "CELCIUS TO FAHRENHEIT CONVERSION", "C", "F",
-				 celcius_to_fahrenheit, true);
+	    conversion_function ("Enter a value in Celsius",
+				 "CELSIUS TO FAHRENHEIT CONVERSION", "C", "F",
+				 celsius_to_fahrenheit, true);
 	    break;
 
 	  }
@@ -131,8 +131,8 @@ temperature_conversion_menu ()
 	  {
 
 	    conversion_function ("Enter a value in Fahrenheit",
-				 "FAHRENHEIT TO CELCIUS CONVERSION", "F", "C",
-				 fahrenheit_to_celcius, true);
+				 "FAHRENHEIT TO CELSIUS CONVERSION", "F", "C",
+				 fahrenheit_to_celsius, true);
 	    break;
 
 	  }
@@ -141,9 +141,9 @@ temperature_conversion_menu ()
 	case 3:
 	  {
 
-	    conversion_function ("Enter a value in Celcius",
-				 "CELCIUS TO KELVIN CONVERSION", "C", "K",
-				 celcius_to_kelvin, true);
+	    conversion_function ("Enter a value in celsius",
+				 "CELSIUS TO KELVIN CONVERSION", "C", "K",
+				 celsius_to_kelvin, true);
 	    break;
 
 	  }
@@ -152,8 +152,8 @@ temperature_conversion_menu ()
 	  {
 
 	    conversion_function ("Enter a value in Kelvin",
-				 "KELVIN TO CELCIUS CONVERSION", "F", "C",
-				 kelvin_to_celcius, true);
+				 "KELVIN TO CELSIUS CONVERSION", "F", "C",
+				 kelvin_to_celsius, true);
 	    break;
 
 	  }

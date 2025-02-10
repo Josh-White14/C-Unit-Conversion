@@ -1,0 +1,34 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up MinGW
+      uses: egor-tensin/setup-mingw@v1
+      with:
+        architecture: x86_64
+
+    - name: Add MinGW to PATH
+      run: echo "::add-path::C:\\msys64\\mingw64\\bin"
+
+    - name: Verify MinGW installation
+      run: gcc --version
+
+    - name: Build project
+      run: mingw32-make
+
+    - name: Run tests
+      run: .\\test_main.exe

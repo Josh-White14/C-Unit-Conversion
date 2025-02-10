@@ -13,22 +13,19 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
-    
+      - name: List directory contents 
+        run: ls -lR tests/Unity/src 
 
-    - name: List directory contents
-      run: ls -lR Assets/Unity/src
+      - name: Verify MinGW installation
+        run: gcc --version
 
-    - name: Checkout repository
-    - uses: actions/checkout@v3
-      with:
-      submodules: recursive
-      
-    - name: Verify MinGW installation
-      run: gcc --version
+      - name: Build project
+        run: mingw32-make
 
-    - name: Build project
-      run: mingw32-make
-
-    - name: Run tests
-      run: .\\test_main.exe
+      - name: Run tests
+        run: .\\test_main.exe

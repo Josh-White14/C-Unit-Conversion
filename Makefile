@@ -30,6 +30,6 @@ $(TARGET): $(OBJS)
 
 # Clean up build files
 clean:
-	rm -f $(OBJS) $(TARGET) 
+	del /Q $(subst /,\,$(OBJS)) $(subst /,\,$(SRCS:.c=.d)) $(TARGET)
 
 .PHONY: all clean

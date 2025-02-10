@@ -8,84 +8,91 @@
 #include "utils.h"
 #include "menu_screen.h"
 
-int main() {
-   
-    bool is_running = true; 
-    while(is_running == true){
+int
+main ()
+{
 
-        clear_screen();
-        
-        puts("CONVERSION COMMAND LINE TOOL"
-            "\n---------------------------"
-            "\n[1] Length Conversion Menu"
-            "\n[2] Temperature Conversion Menu"
-            "\n[3] Mass Conversion Menu"
-            "\n[4] Volume Conversion Menu"
-            "\n[5] Speed Conversion Menu"
-            "\n[6] Unit Calculation Menu"
-            "\n[7] Exit"
-        );
+  bool is_running = true;
+  while (is_running == true)
+    {
 
-        int choice = choice_input(); 
+      clear_screen ();
 
-        switch(choice){
-            
-            case 1: {
+      puts ("CONVERSION COMMAND LINE TOOL"
+	    "\n---------------------------"
+	    "\n[1] Length Conversion Menu"
+	    "\n[2] Temperature Conversion Menu"
+	    "\n[3] Mass Conversion Menu"
+	    "\n[4] Volume Conversion Menu"
+	    "\n[5] Speed Conversion Menu"
+	    "\n[6] Unit Calculation Menu" "\n[7] Exit");
 
-                length_conversion_menu();
-                break;
+      int choice = choice_input ();
 
-            }
+      switch (choice)
+	{
 
-            case 2: {
+	case 1:
+	  {
 
-                temperature_conversion_menu();
-                break;
+	    length_conversion_menu ();
+	    break;
 
-            }
+	  }
 
-            case 3: {
+	case 2:
+	  {
 
-                mass_conversion_menu();
-                break;
+	    temperature_conversion_menu ();
+	    break;
 
-            }
+	  }
 
-            case 4: {
+	case 3:
+	  {
 
-                volume_conversion_menu();
-                break;
+	    mass_conversion_menu ();
+	    break;
 
-            }
+	  }
 
-            case 5: {
+	case 4:
+	  {
 
-                speed_conversion_menu();
-                break;
+	    volume_conversion_menu ();
+	    break;
 
-            }
+	  }
 
-            case 6: {
+	case 5:
+	  {
 
-                unit_calculation_menu();
-                break;
+	    speed_conversion_menu ();
+	    break;
 
-            }
+	  }
 
-            case 7: {
-                is_running = false;
-                break;
-            }
+	case 6:
+	  {
 
-            default : {
-                home_screen_incorrect_menu_choice(choice);
-                break;
-            }
+	    unit_calculation_menu ();
+	    break;
 
-        }
+	  }
+
+	case 7:
+	  {
+	    is_running = false;
+	    break;
+	  }
+
+	default:
+	  {
+	    home_screen_incorrect_menu_choice (choice);
+	    break;
+	  }
+
+	}
     }
-    return 0;
+  return 0;
 }
-
-
-

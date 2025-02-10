@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test_workflows
   pull_request:
     branches:
       - main
@@ -13,14 +14,19 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      
-    - name: Verify MinGW installation
-      run: gcc --version
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
-    - name: Build project
-      run: mingw32-make
+      - name: List directory contents 
+        run: ls -lR tests/Unity/src 
 
-    - name: Run tests
-      run: .\\test_main.exe
+      - name: Verify MinGW installation
+        run: gcc --version
+
+      - name: Build project
+        run: mingw32-make 
+
+      - name: Run tests
+        run: .\tests\Unity\src\test_main.exe

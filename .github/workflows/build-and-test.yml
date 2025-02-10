@@ -26,7 +26,7 @@ jobs:
         run: gcc --version
 
       - name: Build project
-        run: mingw32-make
+        run: mingw32-make 
 
       - name: Run tests
-        run: .\\test_main.exe
+        run: .\tests\Unity\src\test_main.exe

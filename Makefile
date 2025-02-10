@@ -9,6 +9,7 @@ SRC_DIR = src
 TEST_DIR = tests
 UNITY_DIR = Unity/src
 
+
 SRCS = $(SRC_DIR)/unit_conversions.c $(SRC_DIR)/utils.c $(SRC_DIR)/main.c $(SRC_DIR)/menu_screen.c
 TEST_SRCS = $(TEST_DIR)/test_main.c $(SRC_DIR)/unit_conversions.c $(SRC_DIR)/utils.c $(TEST_DIR)/$(UNITY_DIR)/unity.c
 
@@ -21,14 +22,14 @@ TARGET = unit_conversion
 TEST_TARGET = test_main
 
 # Default target
-all: $(TARGET)	$(TEST_TARGET)
+all: $(TARGET) $(TEST_TARGET)
 
 # Link object files to create the executable
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ 		
 
-$(TEST_TARGET): $(TEST_OBJS)
-	$(CC) $(CFLAGS) -o $@ $^	
+$(TEST_TARGET): $(TEST_OBJS) 
+	$(CC) $(CFLAGS) -o $@ $^ 
 
 # Compile source files to object files
 %.o: %.c  

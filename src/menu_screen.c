@@ -435,8 +435,9 @@ unit_calculation_menu ()
 				       "Enter a value in M/S^2",
 				       "MASS CALCULATION", "kg", "m/s^2", "N",
 				       mass_calculation, true);
+	  break;
 	  }
-
+	  
 	case 3:
 	  {
 

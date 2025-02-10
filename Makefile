@@ -2,7 +2,7 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -std=c11 -MMD -MP -I $(TEST_DIR)/$(UNITY_DIR)/
+CFLAGS = -Wall -Wextra -std=c11 -MMD -MP -I $(TEST_DIR)/$(UNITY_DIR)
 
 # Source files
 SRC_DIR = src

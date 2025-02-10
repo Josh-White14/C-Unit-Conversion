@@ -20,7 +20,7 @@ jobs:
           submodules: recursive
 
       - name: List directory contents 
-        run: ls -lR tests/Unity/src 
+        run: dir tests/Unity/src 
 
       - name: Verify MinGW installation
         run: gcc --version

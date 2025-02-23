@@ -5,11 +5,11 @@
 
 
 void setUp(void) {
-    // Redundant for these tests.
+    // Redundant for tests.
 }
 
 void tearDown(void) {
-   // Redundant for these tests.
+   // Redundant for tests.
 }
 
 void test_is_valid_input(void) {
@@ -53,6 +53,20 @@ void test_volume_conversion(void) {
     TEST_ASSERT_EQUAL_FLOAT(0.473176, pints_to_litres(1.0));
 }
 
+void test_speed_conversion(void) {
+    TEST_ASSERT_EQUAL_FLOAT(0.621371, kph_to_mph(1.0));
+    TEST_ASSERT_EQUAL_FLOAT(1.60934, mph_to_kph(1.0));
+    TEST_ASSERT_EQUAL_FLOAT(0.44704, mph_to_mps(1.0));
+    TEST_ASSERT_EQUAL_FLOAT(2.23694, mps_to_mph(1.0));
+}
+
+void test_data_conversion(void) {
+    TEST_ASSERT_EQUAL_FLOAT(1024, GB_to_MB(1.0));
+    TEST_ASSERT_EQUAL_FLOAT(0.000976563, MB_to_GB(1.0));
+    TEST_ASSERT_EQUAL_FLOAT(1048576, GB_to_KB(1.0));
+    TEST_ASSERT_EQUAL_FLOAT(0.000000953674, KB_to_GB(1.0));
+}
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_is_valid_input);
@@ -60,5 +74,7 @@ int main(void) {
     RUN_TEST(test_temperature_conversion);
     RUN_TEST(test_mass_conversion);
     RUN_TEST(test_volume_conversion);
+    RUN_TEST(test_speed_conversion);
+    RUN_TEST(test_data_conversion);
     return UNITY_END();
 }

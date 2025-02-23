@@ -1,5 +1,6 @@
 #include "menu_screen.h"
 
+// File to display the menu screens for the conversion tool.
 int
 length_conversion_menu ()
 {
@@ -352,7 +353,9 @@ speed_conversion_menu ()
       puts ("SPEED CONVERSION MENU"
 	    "\n----------------------"
 	    "\n[1] Kilometers per Hour to Miles per Hour"
-	    "\n[2] Miles per Hour to Kilometers per Hour" "\n[3] Main Menu");
+	    "\n[2] Miles per Hour to Kilometers per Hour" 
+		"\n[3] Miles per Hour to Meters per Second"
+	    "\n[4] Meters per Second to Miles per Hour" "\n[5] Main Menu");
 
       int choice = choice_input ();
 
@@ -380,6 +383,26 @@ speed_conversion_menu ()
 
 	case 3:
 	  {
+
+	    conversion_function ("Enter a value in Miles per Hour",
+				 "MPH TO MPS CONVERSION", "MPH", "MPS",
+				 mph_to_mps, true);
+	    break;
+
+	  }
+
+	case 4:
+	  {
+
+	    conversion_function ("Enter a value in Meters per Second",
+				 "MPS TO MPH CONVERSION", "MPS", "MPH",
+				 mps_to_mph, true);
+	    break;
+
+	  }
+
+	case 5:
+	  {
 	    is_speed_menu_running = false;
 	    break;
 	  }
@@ -395,6 +418,7 @@ speed_conversion_menu ()
   clear_buffer ();
   return 0;
 }
+
 
 int
 unit_calculation_menu ()
@@ -466,4 +490,74 @@ unit_calculation_menu ()
     }
   clear_buffer ();
   return 0;
+}
+
+
+int
+data_conversion_menu ()
+{
+	bool is_data_menu_running = true;
+	while (is_data_menu_running)
+		{
+			clear_buffer ();
+			clear_screen ();
+			puts ("DATA CONVERSION MENU"
+			"\n----------------------"
+			"\n[1] Megabytes to Gigabytes"
+			"\n[2] Gigabytes to Megabytes"
+			"\n[3] Gigabytes to Kilobytes"
+			"\n[4] Kilobytes to Gigabytes"
+			"\n[5] Main Menu");
+
+			int choice = choice_input ();
+
+			switch (choice)
+	{
+	case 1:
+		{
+			conversion_function ("Enter a value in Megabytes",
+				 "MEGABYTES TO GIGABYTES CONVERSION", "MB",
+				 "GB", MB_to_GB, false);
+			break;
+		}
+
+	case 2:
+		{
+			conversion_function ("Enter a value in Gigabytes",
+				 "GIGABYTES TO MEGABYTES CONVERSION", "GB",
+				 "MB", GB_to_MB, false);
+			break;
+		}
+
+	case 3:
+		{
+			conversion_function ("Enter a value in Gigabytes",
+				 "GIGABYTES TO KILOBYTES CONVERSION", "GB",
+				 "KB", GB_to_KB, false);
+			break;
+		}
+
+	case 4:
+		{
+			conversion_function ("Enter a value in Kilobytes",
+				 "KILOYTES TO GIGABYTES CONVERSION", "KB",
+				 "GB", KB_to_GB, false);
+			break;
+		}
+
+	case 5:
+		{
+			is_data_menu_running = false;
+			break;
+		}
+
+	default:
+		{
+			conversion_screen_incorrect_menu_choice (choice);
+			break;
+		}
+	}
+		}
+	clear_buffer ();
+	return 0;
 }

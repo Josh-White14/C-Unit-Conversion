@@ -11,88 +11,94 @@
 int
 main ()
 {
+	// Flag to keep the program running
+	bool is_running = true;
 
-  bool is_running = true;
-  while (is_running == true)
-    {
+	while (is_running == true)
+		{
+			
+			clear_screen ();
 
-      clear_screen ();
+			// Display the main menu
+			puts ("CONVERSION COMMAND LINE TOOL"
+			"\n---------------------------"
+			"\n[1] Length Conversion Menu"
+			"\n[2] Temperature Conversion Menu"
+			"\n[3] Mass Conversion Menu"
+			"\n[4] Volume Conversion Menu"
+			"\n[5] Speed Conversion Menu"
+			"\n[6] Data Conversion Menu"
+			"\n[7] Unit Calculation Menu" "\n[8] Exit");
 
-      puts ("CONVERSION COMMAND LINE TOOL"
-	    "\n---------------------------"
-	    "\n[1] Length Conversion Menu"
-	    "\n[2] Temperature Conversion Menu"
-	    "\n[3] Mass Conversion Menu"
-	    "\n[4] Volume Conversion Menu"
-	    "\n[5] Speed Conversion Menu"
-	    "\n[6] Unit Calculation Menu" "\n[7] Exit");
+			// Get the user's choice
+			int choice = choice_input ();
 
-      int choice = choice_input ();
-
-      switch (choice)
+			
+			switch (choice)
 	{
-
 	case 1:
-	  {
-
-	    length_conversion_menu ();
-	    break;
-
-	  }
+		{
+			
+			length_conversion_menu ();
+			break;
+		}
 
 	case 2:
-	  {
-
-	    temperature_conversion_menu ();
-	    break;
-
-	  }
+		{
+			
+			temperature_conversion_menu ();
+			break;
+		}
 
 	case 3:
-	  {
-
-	    mass_conversion_menu ();
-	    break;
-
-	  }
+		{
+			
+			mass_conversion_menu ();
+			break;
+		}
 
 	case 4:
-	  {
-
-	    volume_conversion_menu ();
-	    break;
-
-	  }
+		{
+			
+			volume_conversion_menu ();
+			break;
+		}
 
 	case 5:
-	  {
-
-	    speed_conversion_menu ();
-	    break;
-
-	  }
+		{
+			
+			speed_conversion_menu ();
+			break;
+		}
 
 	case 6:
-	  {
-
-	    unit_calculation_menu ();
-	    break;
-
-	  }
+		{
+			
+			data_conversion_menu ();
+			break;
+		}
 
 	case 7:
-	  {
-	    is_running = false;
-	    break;
-	  }
+		{
+			
+			unit_calculation_menu ();
+			break;
+		}
+
+	case 8:
+		{
+			// Exit the program
+			is_running = false;
+			break;
+		}
 
 	default:
-	  {
-	    home_screen_incorrect_menu_choice (choice);
-	    break;
-	  }
-
+		{
+			// Handle incorrect menu choice
+			home_screen_incorrect_menu_choice (choice);
+			break;
+		}
 	}
-    }
-  return 0;
+		}
+	return 0;
 }

@@ -1,5 +1,6 @@
 #include "unit_conversions.h"
 
+// File for all unit conversion functions.
 double
 meters_to_feet (double meters)
 {
@@ -119,6 +120,42 @@ double
 mph_to_kph (double mph)
 {
   return mph * MPH_TO_KPH_CONVERSION_FACTOR;
+}
+
+double
+mph_to_mps (double mph)
+{
+  return mph * MPH_TO_MPS_CONVERSION_FACTOR;
+}
+
+double
+mps_to_mph (double mps)
+{
+  return mps * MPS_TO_MPH_CONVERSION_FACTOR;
+}
+
+double
+GB_to_MB (double GB)
+{
+  return GB * GB_TO_MB_CONVERSION_FACTOR;
+}
+
+double
+MB_to_GB (double MB)
+{
+  return MB * MB_TO_GB_CONVERSION_FACTOR;
+}
+
+double
+GB_to_KB (double GB)
+{
+  return GB * GB_TO_KB_CONVERSION_FACTOR;
+}
+
+double
+KB_to_GB (double KB)
+{
+  return KB * KB_TO_GB_CONVERSION_FACTOR;
 }
 
 double

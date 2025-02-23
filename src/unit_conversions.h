@@ -31,6 +31,13 @@ static const double PINTS_TO_LITRES_CONVERSION_FACTOR = 0.473176;
 
 static const double KPH_TO_MPH_CONVERSION_FACTOR = 0.621371;
 static const double MPH_TO_KPH_CONVERSION_FACTOR = 1.60934;
+static const double MPH_TO_MPS_CONVERSION_FACTOR = 0.44704;
+static const double MPS_TO_MPH_CONVERSION_FACTOR = 2.23694;
+
+static const double GB_TO_MB_CONVERSION_FACTOR = 1024;
+static const double MB_TO_GB_CONVERSION_FACTOR = 0.000976563;
+static const double GB_TO_KB_CONVERSION_FACTOR = 1048576;
+static const double KB_TO_GB_CONVERSION_FACTOR = 0.000000953674;
 
 double meters_to_feet (double meter_measurement);
 double feet_to_meters (double feet_measurement);
@@ -57,10 +64,19 @@ double pints_to_litres (double pints);
 
 double kph_to_mph (double kph);
 double mph_to_kph (double mph);
+double mph_to_mps (double mph);
+double mps_to_mph (double mps);
+
+double GB_to_MB (double GB);
+double MB_to_GB (double MB);
+double GB_to_KB (double GB);
+double KB_to_GB (double KB);
+
 
 double speed_calculation (double distance, double time);
 double mass_calculation (double mass, double acceleration);
 double acceleration_calculation (double velocity, double time);
+
 
 
 #endif

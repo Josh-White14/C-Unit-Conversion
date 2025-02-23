@@ -17,6 +17,7 @@ int mass_conversion_menu ();
 int volume_conversion_menu ();
 int speed_conversion_menu ();
 int unit_calculation_menu ();
+int data_conversion_menu ();
 
 
 #endif

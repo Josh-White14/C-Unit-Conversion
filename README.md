@@ -34,4 +34,4 @@ unit_conversion
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code follows the project's coding standards and includes appropriate tests.
 
 ## License
-Unlicensed as private repository. 
+Licensed under MIT license. 

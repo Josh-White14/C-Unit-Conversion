@@ -30,6 +30,10 @@ mingw32-make
 unit_conversion
 ```
 
+## Testing
+
+This repository uses the Unity C testing framework as a submodule, the original repository can be found here 
+
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code follows the project's coding standards and includes appropriate tests.
 
